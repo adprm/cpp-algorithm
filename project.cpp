@@ -12,8 +12,8 @@ int main()
 
     //Deklarasi variable
     string nama, member, status;
-    int lama_sewa, tgl_sewa, jam_sewa, hrg_siang, hrg_malam;
-    float harga_lapangan, total_bayar, masukkan_bayar, total_akhir, kembalian;
+    long lama_sewa, tgl_sewa, jam_sewa, hrg_siang, hrg_malam, total_akhir, kembalian;
+    double harga_lapangan, total_bayar, masukkan_bayar;
 
     //nilai variable
     hrg_siang = 80000;
@@ -44,7 +44,7 @@ int main()
         cin >> tgl_sewa;
         cout << "=====================================================" << endl;
 
-        //Logig Penyewaan Siang
+        //Logik Penyewaan Siang
         if (jam_sewa >= 9 && jam_sewa <= 18)
         {
             if (lama_sewa <= 1)
@@ -57,7 +57,7 @@ int main()
             }
         }
 
-        // Logig Penyewaan Malam
+        // Logik Penyewaan Malam
         else if (jam_sewa >= 19 && jam_sewa <= 21)
         {
             if (lama_sewa <= 1)
@@ -83,19 +83,20 @@ int main()
         cin >> member;
         cout << "=====================================================" << endl;
 
-        //Logig member
+        /*Logik member
+        Menggunakan Opertaor Logika OR */
         if (member == "y" || member == "Y")
         {
-            // cout<<"member";
+            //Output Jika Member
             cout << "Selamat Anda Mendapat Diskon 10%" << endl;
             total_bayar = harga_lapangan - (harga_lapangan * 0.1);
         }
 
         else if (member == "t" || member == "T")
         {
-            // cout<<"Non";
+            //Output Jika Tidak Member
             total_bayar = harga_lapangan;
-        };
+        }
 
         //Total Bayar lapangan sebelum meberi uang nya
         cout << "Total Bayar Lapangan Yang Anda Sewa    : " << total_bayar << endl;
@@ -105,7 +106,7 @@ int main()
         cout << "Masukkan Jumlah Uang                   : ";
         cin >> masukkan_bayar;
 
-        //Login Pembayaran
+        //Logik Pembayaran
         if (masukkan_bayar >= total_bayar)
         {
             total_akhir = masukkan_bayar - total_bayar;
@@ -116,7 +117,7 @@ int main()
             total_akhir = total_bayar;
         }
 
-        //
+        //Output Pengembalian Uang
         cout << "Kembalian                              : " << kembalian << endl;
 
         //Interface Ingin Memesan Lagi atau tidak
@@ -124,13 +125,15 @@ int main()
         cout << "Apakah Anda Ingin Menyewa Lapangan Lagi (y/t) : ";
         cin >> status;
 
-        //Looping Status
+        /*Looping Status
+        Menggunakan Operator Logika OR
+        Looping dengan Do Whilw */
     } while (status == "y" || status == "Y");
 
     //Program Selesai Jika tidak Memesan lagi
     cout << "=====================================================" << endl;
     cout << "|                                                   |" << endl;
-    cout << "|        Terimakasih Telah Memesan Lapangan         |" << endl;
+    cout << "|        Terimakasih Telah Menyewa Lapangan         |" << endl;
     cout << "|                                                   |" << endl;
     cout << "=====================================================" << endl;
 }
