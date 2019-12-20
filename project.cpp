@@ -12,8 +12,8 @@ int main()
 
     //Deklarasi variable
     string nama, member, status;
-    long lama_sewa, tgl_sewa, jam_sewa, hrg_siang, hrg_malam, total_akhir, kembalian;
-    double harga_lapangan, total_bayar, masukkan_bayar;
+    long lama_sewa, tgl_sewa, jam_sewa, masukkan_bayar, total_bayar, total_akhir, kembalian, harga_lapangan;
+    int hrg_siang, hrg_malam;
 
     //nilai variable
     hrg_siang = 80000;
@@ -24,27 +24,29 @@ int main()
     {
 
         // Tampilan Jadwal & Harga Lapangan Futsal
-        cout << "=====================================================" << endl;
-        cout << "|                 LAPANGAN FUTSAL 99                |" << endl;
-        cout << "|              Daftar Harga Sewa Lapangan           |" << endl;
-        cout << "=====================================================" << endl;
-        cout << "|  Waktu Sewa                            Harga Sewa |" << endl;
-        cout << "|09.00 - 18.00                          80.000 / Jam|" << endl;
-        cout << "|18.00 - 21.00                         125.000 / jam|" << endl;
-        cout << "=====================================================" << endl;
+        cout << "===============================================================" << endl;
+        cout << "|                      LAPANGAN FUTSAL 99                     |" << endl;
+        cout << "|                   Daftar Harga Sewa Lapangan                |" << endl;
+        cout << "===============================================================" << endl;
+        cout << "|      Waktu Sewa                                Harga Sewa   |" << endl;
+        cout << "|    09.00 - 18.00                              80.000 / Jam  |" << endl;
+        cout << "|    18.00 - 21.00                             125.000 / jam  |" << endl;
+        cout << "|                   UNTUK MEMBER DISKON 10%                   |" << endl;
+        cout << "===============================================================" << endl;
 
         //Input Data Penyewaan Lapangan
-        cout << "Nama Penyewa                           : ";
+        cout << "Nama Penyewa                                      : ";
         cin >> nama;
-        cout << "Ingin Menyewa Lapangan Berapa Lama     : ";
+        cout << "Ingin Menyewa Lapangan Berapa Lama                : ";
         cin >> lama_sewa;
-        cout << "Jam Berapa Anda Ingin Menyewa Lapangan : ";
+        cout << "Jam Berapa Anda Ingin Menyewa Lapangan (8 s.d 21) : ";
         cin >> jam_sewa;
-        cout << "Masukkan Tanggal Sewa Lapangan         : ";
+        cout << "Masukkan Tanggal Sewa Lapangan (1 s.d 30)         : ";
         cin >> tgl_sewa;
-        cout << "=====================================================" << endl;
+        cout << "===============================================================" << endl;
 
-        //Logik Penyewaan Siang
+        /* Logik Penyewaan Siang
+        Dari Jam 09.00 s.d 18.00 */
         if (jam_sewa >= 9 && jam_sewa <= 18)
         {
             if (lama_sewa <= 1)
@@ -57,7 +59,8 @@ int main()
             }
         }
 
-        // Logik Penyewaan Malam
+        /* Logik Penyewaan Malam
+        Dari Jam 19.00 s.d 21.00 */
         else if (jam_sewa >= 19 && jam_sewa <= 21)
         {
             if (lama_sewa <= 1)
@@ -71,17 +74,17 @@ int main()
         };
 
         //View Data Penyewaan Lapangan
-        cout << "Atas Nama                              : " << nama << endl;
-        cout << "Lama Penyewaan Lapangan Dalam Jam      : " << lama_sewa << endl;
-        cout << "Waktu Jam Sewa Lapangan                : " << jam_sewa << endl;
-        cout << "Waktu Tanggal Sewa Lapangan            : " << tgl_sewa << endl;
-        cout << "Total Harga Penyewaan Lapangan         : " << harga_lapangan << endl;
-        cout << "=====================================================" << endl;
+        cout << "Atas Nama                                         : " << nama << endl;
+        cout << "Lama Penyewaan Lapangan Dalam Jam                 : " << lama_sewa << endl;
+        cout << "Waktu Jam Sewa Lapangan                           : " << jam_sewa << endl;
+        cout << "Waktu Tanggal Sewa Lapangan                       : " << tgl_sewa << endl;
+        cout << "Total Harga Penyewaan Lapangan                    : " << harga_lapangan << endl;
+        cout << "===============================================================" << endl;
 
         //Input Data Member atau Non Member
-        cout << "Apakah Anda Member (y/t)               : ";
+        cout << "Apakah Anda Member (y/t)                          : ";
         cin >> member;
-        cout << "=====================================================" << endl;
+        cout << "===============================================================" << endl;
 
         /*Logik member
         Menggunakan Opertaor Logika OR */
@@ -91,7 +94,6 @@ int main()
             cout << "Selamat Anda Mendapat Diskon 10%" << endl;
             total_bayar = harga_lapangan - (harga_lapangan * 0.1);
         }
-
         else if (member == "t" || member == "T")
         {
             //Output Jika Tidak Member
@@ -99,11 +101,11 @@ int main()
         }
 
         //Total Bayar lapangan sebelum meberi uang nya
-        cout << "Total Bayar Lapangan Yang Anda Sewa    : " << total_bayar << endl;
+        cout << "Total Bayar Lapangan Yang Anda Sewa               : " << total_bayar << endl;
 
         //Membayar Uang
-        cout << "=====================================================" << endl;
-        cout << "Masukkan Jumlah Uang                   : ";
+        cout << "===============================================================" << endl;
+        cout << "Masukkan Jumlah Uang                              : ";
         cin >> masukkan_bayar;
 
         //Logik Pembayaran
@@ -118,22 +120,22 @@ int main()
         }
 
         //Output Pengembalian Uang
-        cout << "Kembalian                              : " << kembalian << endl;
+        cout << "Kembalian                                         : " << kembalian << endl;
 
         //Interface Ingin Memesan Lagi atau tidak
-        cout << "=====================================================" << endl;
-        cout << "Apakah Anda Ingin Menyewa Lapangan Lagi (y/t) : ";
+        cout << "===============================================================" << endl;
+        cout << "Apakah Anda Ingin Menyewa Lapangan Lagi (y/t)     : ";
         cin >> status;
 
         /*Looping Status
         Menggunakan Operator Logika OR
-        Looping dengan Do Whilw */
+        Looping dengan Do While */
     } while (status == "y" || status == "Y");
 
     //Program Selesai Jika tidak Memesan lagi
-    cout << "=====================================================" << endl;
-    cout << "|                                                   |" << endl;
-    cout << "|        Terimakasih Telah Menyewa Lapangan         |" << endl;
-    cout << "|                                                   |" << endl;
-    cout << "=====================================================" << endl;
+    cout << "===============================================================" << endl;
+    cout << "|                                                             |" << endl;
+    cout << "|               Terimakasih Telah Menyewa Lapangan            |" << endl;
+    cout << "|                                                             |" << endl;
+    cout << "===============================================================" << endl;
 }
