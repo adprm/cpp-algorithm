@@ -129,8 +129,8 @@ int main()
 
     //Program Selesai Jika tidak Memesan lagi
     cout << "=====================================================" << endl;
-    cout << "|                                                    " << endl;
-    cout << "|        Terimakasih Telah Memesan Lapangan          " << endl;
-    cout << "|                                                    " << endl;
+    cout << "|                                                   |" << endl;
+    cout << "|        Terimakasih Telah Memesan Lapangan         |" << endl;
+    cout << "|                                                   |" << endl;
     cout << "=====================================================" << endl;
 }
