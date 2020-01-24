@@ -1,5 +1,5 @@
 /* SOAL NOMOR 8
-author : Aditiya Permana */
+author : Aditiya Permana 15190007 */
 
 #include <iostream>
 using namespace std;
