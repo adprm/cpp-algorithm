@@ -1,4 +1,6 @@
-//SOAL NOMOR 6
+/* SOAL NOMOR 6
+author : Aditiya Permana */
+
 #include <iostream>
 using namespace std;
 

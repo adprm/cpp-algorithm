@@ -1,4 +1,6 @@
-//SOAL NOMOR 1
+/* SOAL NOMOR 1
+author : Aditiya Permana */
+
 #include <iostream>
 using namespace std;
 

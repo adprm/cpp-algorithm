@@ -1,4 +1,6 @@
-//SOAL NOMOR 8
+/* SOAL NOMOR 8
+author : Aditiya Permana */
+
 #include <iostream>
 using namespace std;
 

@@ -1,4 +1,6 @@
-//SOAL NOMOR 10
+/* SOAL NOMOR 9
+author : Aditiya Permana */
+
 #include <iostream>
 using namespace std;
 

@@ -1,4 +1,6 @@
-//SOAL NOMOR 4
+/* SOAL NOMOR 4
+author : Aditiya Permana */
+
 #include <iostream>
 using namespace std;
 
