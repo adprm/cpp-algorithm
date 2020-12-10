@@ -3,16 +3,30 @@ using namespace std;
 
 int main()
 {
-    // Deklarasi varible
-    int kelas;
+    // Deklarasi varible char, string, integer
     char status;
-    string kode_pesawat, nama_pesawat, kelas_pesawat;
-    long harga_pesawat, harga_kelas, total_bayar, pembayaran, kembalian;
-    
+    string kode_pesawat, nama_pesawat, kelas_pesawat, biodata_diri[3];
+    int kelas, harga_pesawat, harga_kelas, total_bayar, pembayaran, kembalian;
+
     do
     {
+        system("clear");
+        // Tampilan selamat datang
+        cout << "============= Program Tiket Pesawat =============" << endl;
+        cout << "|                                               |" << endl;
+        cout << "|                 SELAMAT DATANG                |" << endl;
+        cout << "|                                               |" << endl;
+        cout << "=================================================" << endl;
+        cout << "Masukkan nama anda                         : ";
+        cin >> biodata_diri[0];
+        cout << "Masukkan umur anda                         : ";
+        cin >> biodata_diri[1];
+        cout << "Masukkan tanggal keberangkatan(dd/mm/yyyy) : ";
+        cin >> biodata_diri[2];
 
-        // Tampilan
+        cout << "=================================================" << endl;
+
+        // Tampilan pemesanan tiket pesawat
         cout << "============= Program Tiket Pesawat =============" << endl;
         cout << "|               Jakarta - Jepang                |" << endl;
         cout << "|-----------------------------------------------|" << endl;
@@ -26,6 +40,9 @@ int main()
         cout << "Masukkan kode pesawat (MPT/GRD/LION) : ";
         cin >> kode_pesawat;
 
+        cout << "=================================================" << endl;
+
+        // Tampilan pemesanan kelas pesawat
         cout << "================ Harga Kelas Pesawat ============" << endl;
         cout << "|1. Ekonomi                            Rp100.000|" << endl;
         cout << "|2. Bisnis                             Rp200.000|" << endl;
@@ -112,13 +129,19 @@ int main()
             kelas_pesawat = "Eksekutif";
         }
 
-        // Hasil
-        cout << "================= Data Pembayaran =================" << endl;
-        cout << "Nama pesawat                   :    " << nama_pesawat << endl;
-        cout << "Kelas Pesawat                  :    " << kelas_pesawat << endl;
-        cout << "Total bayar tiket anda adalah  :    " << total_bayar << endl;
-        cout << "===================================================" << endl;
+        cout << "=================================================" << endl;
 
+        // Output Hasil Data Pemesanan
+        cout << "=================Data Pembayaran ================" << endl;
+        cout << "Nama pemesan tiket            : " << biodata_diri[0] << endl;
+        cout << "Umur                          : " << biodata_diri[1] << endl;
+        cout << "Tanggal keberangkatan         : " << biodata_diri[2] << endl;
+        cout << "Nama pesawat                  : " << nama_pesawat << endl;
+        cout << "Kelas Pesawat                 : " << kelas_pesawat << endl;
+        cout << "Total bayar tiket anda adalah : " << total_bayar << endl;
+        cout << "=================================================" << endl;
+
+        // Masukkan jumlah uang pembayaran
         cout << "Masukkan uang anda : ";
         cin >> pembayaran;
 
@@ -132,23 +155,25 @@ int main()
             kembalian = 0;
         }
 
-        // Hasil
+        cout << "=================================================" << endl;
+
+        // output hasil uang kembalian
         cout << "Uang anda                      :    " << pembayaran << endl;
         cout << "Kembalian anda                 :    " << kembalian << endl;
         cout << "===================================================" << endl;
 
-        cout << "Apakah anda ingin memesan tiket lagi?";
+        cout << "Apakah anda ingin memesan tiket lagi (y / t) ?";
         cin >> status;
 
-    // Looping Jika status "Y" maka kode program akan di ulang
+        // Looping Jika status "Y" maka kode program akan di ulang
     } while (status == 'y' || status == 'Y');
 
     //Program Selesai Jika tidak Memesan lagi
-    cout << "===============================================================" << endl;
-    cout << "|                                                             |" << endl;
-    cout << "|               Terimakasih Telah Memesan Tiket               |" << endl;
-    cout << "|                                                             |" << endl;
-    cout << "===============================================================" << endl;
+    cout << "=================================================" << endl;
+    cout << "|                                               |" << endl;
+    cout << "|         Terimakasih Telah Memesan Tiket       |" << endl;
+    cout << "|                                               |" << endl;
+    cout << "=================================================" << endl;
 
     return 0;
 }
