@@ -179,7 +179,7 @@ int main()
 {
     do
     {
-        system("clear");
+        system("cls");
         // Memanggil function input biodata diri
         input_biodatadiri();
         cout << "=================================================" << endl;
